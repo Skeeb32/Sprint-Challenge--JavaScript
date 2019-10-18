@@ -29,14 +29,25 @@ Demonstrate your understanding of this week's concepts by answering the followin
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your team lead
 
 1. Describe the biggest difference between `.forEach` & `.map`.
+Both .forEach and .map are array methods. .forEach executes a provided function once for each array element and .map creates a new array with the results of callign a provided function on every element in the calling aray. Well, the forEach method doesn't actually return anything. It simplay calls a provided function an each elemment in your array. This callback is allowed to mutate the calling array. Meanwhile, the .map method will also call a provided function on every element in the array. The difference is that .map utilizes return values and actually returns a new array of the same size.
 
 2. What is the difference between a function and a method?
+A function is a piece of code that is called by name. It can be passed data to operate on an dcan opitionally return the value. In most respects, it is identical to a function expect for two key differences. A method is implicitly passed the object internal to part of a class. The term method is used almost exclusively in object oriented programming. A function is something that takes a bunch of inputs and returns one for mroe values. 
 
 3. What is closure?
+A closure is the combination of a function bundled together with references to its surrounding state (the lexical enviornment). In other words, a closure gives you access to an outer functions scope from an inner function. In JavaScript, closures are created evey time a function is created at funcation creation time. 
+To use a closure, define a function inside another function and expose it. To expose a function, return it or pass it ot another function. The inner function will ahve access to the variables in the outer function scope, even after the user function has returned.
+closures control what is and isn't in scope in a particualr function, along with which variables are shared between sibling functions in the same containing scope.
 
 4. Describe the four rules of the 'this' keyword.
 
+    1. If the "new" keyword is used when calling in the function, "this" inside the function is a brand new object. 
+    2. If "apply", "call", "bind" are used to call a function, "this" inside the function is the object that is passed in as the argument. Whenever they are used as a method, "this" is explicitly defined.
+    3. If a function is called as a method that is, if dot notation is used to invoke the function, "this" is the object that the function invocation, "this" is the object to the left of the dot.
+    4. If the function is invoked as a free function invocation, meaning it was invoked without an of the conditions present above, "this" is the global object. In a browser, it's "window".
+
 5. Why do we need super() in an extended class?
+The "super" keyword is used in two ways. The extends keyword, and super(); function make it so trivial to bind our classes together to achieve some simple object inheritance. The extends keyword will abstract away any of the Class.call syntax that we're used to. super() is used to tell a parent's constructor to be concerned with the child's attributes vis versa and abstracts away the Object.create(this, Class) syntax. It makes the code look more cleaner at the end.
 
 ## Project Set up
 
